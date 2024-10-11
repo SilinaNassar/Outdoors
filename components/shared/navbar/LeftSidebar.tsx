@@ -137,7 +137,7 @@ const LeftSidebar = () => {
         </SignedIn>
       </aside>
       <Sheet>
-        <SheetTrigger className=" shadow-light-100 z-50  my-auto ml-2 flex flex-col items-start justify-center rounded border border-none max-sm:hidden md:hidden">
+        <SheetTrigger className=" shadow-light-100 z-50 fixed top-[350px] ml-2 flex flex-col items-start justify-center rounded border border-none max-sm:hidden md:hidden">
           <Image
             src="/assets/icons/rightArrow.png"
             width={26}

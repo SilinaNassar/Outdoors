@@ -3,6 +3,8 @@ export const UserFilters = [
   { name: "My Connections", value: "my_connections" },
   { name: "New Connections", value: "new_connections" },
   { name: "Top Contributors", value: "top_contributors" },
+  { name: "Job Seekers", value: "job_seekers" },
+  { name: "Recommended Seekers", value: "recommended_seekers" },
 ];
 
 export const JobFilters = [
@@ -41,4 +43,11 @@ export const GlobalSearchFilters = [
   { name: "Posts", value: "post" },
   { name: "Groups", value: "group" },
   { name: "Events", value: "event" },
+];
+
+export const JobSeekersFilters = [
+  { name: "All Job Seekers", value: "all_job_seekers" },
+  { name: "Recommended for Company", value: "recommended_seekers" },
+  { name: "Top Candidates", value: "top_candidates" },
+  { name: "New Applications", value: "new_applications" },
 ];

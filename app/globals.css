@@ -116,6 +116,25 @@ body {
   -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Adjust width for better visibility */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888; /* Change to your desired color */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Hover effect */
+}
+
+/* For Firefox */
+.scrollable-sidebar {
+  scrollbar-width: thin; /* or auto for default */
+  scrollbar-color: #888 #ffffff; /* thumb color and track color */
+}
+
 /* Markdown Start */
 .markdown a {
   color: #1da1f2;
@@ -285,4 +304,11 @@ code {
 
 .swiper-scrollbar {
   background: rgba(255, 255, 255, 0.5); /* Customize scrollbar background */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

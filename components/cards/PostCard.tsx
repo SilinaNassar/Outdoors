@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,11 +11,7 @@ import "swiper/css/scrollbar";
 import Media from "../postComponents/Media";
 
 interface Reactions {
-  celebrate?: number;
-  support?: number;
-  love?: number;
-  insightful?: number;
-  curious?: number;
+  [key: string]: number;
 }
 
 interface Props {

@@ -10,7 +10,6 @@ import { PostFilters } from "@/constants/filters";
 import HomeFilters from "@/components/home/HomeFilters";
 import NoResult from "@/components/shared/NoResult";
 import PostCard from "@/components/cards/PostCard";
-import image from "next/image";
 
 const posts = [
   {
@@ -250,7 +249,7 @@ const PostBox = () => {
         otherClasses="min-h-[56px] sm:min-w-[170px]"
         containerClasses="hidden max-md:flex"
       />
-      <HomeFilters />
+      <HomeFilters filters={PostFilters} active="all_posts" />
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {posts.length > 0 ? (
