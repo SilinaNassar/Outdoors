@@ -27,7 +27,7 @@ const NavContent = () => {
           <SheetClose asChild key={item.route}>
             <Link
               href={item.route}
-              className={`${isActive ? "primary-gradient text-light-900 rounded-lg" : "text-dark300_light900"} flex items-center justify-start gap-4 bg-transparent p-4`}
+              className={`${isActive ? "primary-gradient rounded-lg text-light-900" : "text-dark300_light900"} flex items-center justify-start gap-4 bg-transparent p-4`}
             >
               <Image
                 src={item.imgURL}
@@ -51,7 +51,7 @@ const LeftSidebar = () => {
   const { signOut } = useAuth();
   return (
     <>
-      <aside className="background-light900_dark200 light-border custom-scrollbar no-scrollbar shadow-light-300 sticky left-0  top-0 hidden h-screen flex-col items-center justify-center overflow-y-auto border-r p-6 pt-20 md:flex dark:shadow-none">
+      <aside className="background-light900_dark200 light-border custom-scrollbar no-scrollbar sticky left-0 top-0 hidden  h-screen  flex-col items-center justify-center overflow-y-auto border-r p-6 pt-20 shadow-light-300 dark:shadow-none md:flex">
         <div className="flex flex-1 flex-col gap-1">
           {sidebarLinks.map((item) => {
             const isActive =
@@ -137,7 +137,7 @@ const LeftSidebar = () => {
         </SignedIn>
       </aside>
       <Sheet>
-        <SheetTrigger className=" shadow-light-100 z-50 fixed top-[350px] ml-2 flex flex-col items-start justify-center rounded border border-none max-sm:hidden md:hidden">
+        <SheetTrigger className=" fixed top-[350px] z-50 ml-2 flex flex-col items-start justify-center rounded border border-none shadow-light-100 max-sm:hidden md:hidden">
           <Image
             src="/assets/icons/rightArrow.png"
             width={26}
@@ -172,7 +172,7 @@ const LeftSidebar = () => {
                   className="small-medium text-dark400_light900 btn-primary min-h-[41px] w-full rounded-lg p-4 shadow-none"
                   onClick={() => signOut()}
                 >
-                  <span className="dark:text-primary-100 text-white ">
+                  <span className="text-white dark:text-primary-100 ">
                     Log out
                   </span>
                 </Button>

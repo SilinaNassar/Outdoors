@@ -179,6 +179,13 @@ const jobsData = [
   },
 ];
 const JobListingPage = () => {
+  const imageData = jobsData.map((item) => {
+    return {
+      id: item.id,
+      image: item.company.image,
+      title: item.company.name,
+    };
+  });
   return (
     <section className="max-w-[950px] ">
       <HomeFilters filters={JobFilters} active="all_jobs" />
@@ -218,7 +225,7 @@ const JobListingPage = () => {
         title="Explore job collections"
         paragraph="Broaden your job search with curated collections of opportunities
         tailored to your skills and interests."
-        data={jobsData}
+        data={imageData}
         url="/companies"
       />
 

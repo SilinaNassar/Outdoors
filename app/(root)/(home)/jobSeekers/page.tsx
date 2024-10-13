@@ -146,6 +146,13 @@ const jobSeekersData = [
 ];
 
 const page = () => {
+  const imageData = jobSeekersData.map((item) => {
+    return {
+      id: item.id,
+      image: item.image,
+      title: item.name,
+    };
+  });
   return (
     <section className="max-w-[950px] ">
       <HomeFilters filters={JobSeekersFilters} active="all_jobs" />
@@ -179,15 +186,14 @@ const page = () => {
           hasMutualFriends={false}
         />
       </div>
-      {/*
+
       <ImageSlider
-        title="Explore job collections"
-        paragraph="Broaden your job search with curated collections of opportunities
-            tailored to your skills and interests."
-        data={jobSeekersData}
+        title="Discover Top Candidates"
+        paragraph="Explore a curated selection of job seekers with the skills and experience your company needs."
+        data={imageData}
         url="/companies"
       />
-      */}
+
       <SeekerCard
         data={jobSeekersData}
         title="Job Seekers in Your Network"

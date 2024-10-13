@@ -64,7 +64,7 @@ const PostCard = ({
             className="mr-2 rounded-full dark:invert"
           />
           <div>
-            <h3 className="sm:h4-semibold base-semibold text-dark200_light900 line-clamp-1 flex-1 font-inter">
+            <h3 className="sm:h3-semibold base-semibold text-dark200_light900 line-clamp-1 flex-1 font-inter">
               {author.name}
             </h3>
             <p className=" subtle-regular text-dark400_light700 line-clamp-1 flex font-inter ">

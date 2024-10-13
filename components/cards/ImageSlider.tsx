@@ -6,19 +6,8 @@ import { useRouter } from "next/router";
 interface Props {
   data: {
     id: number;
+    image: string;
     title: string;
-    company: {
-      name: string;
-      location: string;
-      image: string;
-      mutualFriends: {
-        id: number;
-        name: string;
-        image: string;
-      }[];
-    };
-    time: string;
-    posted: string;
   }[];
   title: string;
   paragraph: string;
@@ -48,7 +37,7 @@ const ImageSlider = ({ title, paragraph, data, url }: Props) => {
         {paragraph}
       </p>
 
-      <div className="relative mt-4 ml-2 flex items-center mx-2">
+      <div className="relative mx-2 mt-4 flex items-center">
         {/* Left Arrow */}
 
         <Image
@@ -56,32 +45,32 @@ const ImageSlider = ({ title, paragraph, data, url }: Props) => {
           alt="left"
           height={23}
           width={23}
-          className="absolute -left-6 z-10 flex justify-center cursor-pointer "
+          className="absolute -left-6 z-10 flex cursor-pointer justify-center "
           onClick={handleLeft}
         />
 
         {/* Scrollable image row */}
         <div
           id="scroll-container"
-          className="no-scrollbar flex lg:w-full sm:w-[550px] max-sm:w-[370px] space-x-4 overflow-x-auto scroll-smooth p-4"
+          className="no-scrollbar flex space-x-4 overflow-x-auto scroll-smooth p-4 max-sm:w-[370px] sm:w-[550px] lg:w-full"
         >
-          {data.map((job) => (
+          {data.map((item) => (
             <div
-              key={job.id}
-              className="w-[150px] max-sm:w-[80px] sm:w-[120px] shrink-0 rounded-md border-2 p-4 background-light-custom"
+              key={item.id}
+              className="background-light-custom w-[150px] shrink-0 rounded-md border-2 p-4 max-sm:w-[80px] sm:w-[120px]"
             >
-              <Link href={`${url}/${job.id}`}>
+              <Link href={`${url}/${item.id}`}>
                 <Image
-                  src={job.company.image}
-                  alt={`${job.company.name} logo`}
+                  src={item.image}
+                  alt={`${item.title} logo`}
                   height={64}
                   width={64}
-                  className="mx-auto mb-3 cursor-pointer rounded-full border object-contain"
+                  className="mx-auto mb-3 cursor-pointer rounded-full border object-contain "
                 />
               </Link>
 
-              <h3 className="text-dark300_light800 max-sm:text-[10px] sm:text-[14px] text-md text-center font-inter font-semibold">
-                {job.company.name}
+              <h3 className="text-dark300_light800 text-md text-center font-inter font-semibold max-sm:text-[10px] sm:text-[14px]">
+                {item.title}
               </h3>
             </div>
           ))}
@@ -93,7 +82,7 @@ const ImageSlider = ({ title, paragraph, data, url }: Props) => {
           alt="left"
           height={28}
           width={28}
-          className="absolute -right-6 z-10 flex justify-center cursor-pointer"
+          className="absolute -right-6 z-10 flex cursor-pointer justify-center"
           onClick={handleRight}
         />
       </div>

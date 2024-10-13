@@ -38,7 +38,7 @@ const SeekerCard = ({ data, title, subTitle, hasMutualFriends }: Props) => {
     setVisibleSeekers(visibleSeekers.filter((user) => user.id !== id));
   };
   return (
-    <div className="background-light800_darkgradient border light-border sm:rounded-[22px] card-wrapper custom-scrollbar shadow-dark-200 no-scrollbar mt-6  flex w-full flex-col overflow-y-auto rounded-[22px] border-l p-6 pt-8 shadow-light-300   ">
+    <div className="background-light800_darkgradient light-border card-wrapper custom-scrollbar no-scrollbar mt-6 flex w-full flex-col  overflow-y-auto rounded-[22px] border p-6 pt-8  shadow-light-300 sm:rounded-[22px]   ">
       <div className="text-dark400_light700 mb-4 ">
         <h2 className="text-dark200_light900 font-inter text-xl font-semibold ">
           {title}
@@ -46,12 +46,12 @@ const SeekerCard = ({ data, title, subTitle, hasMutualFriends }: Props) => {
         <h5 className="text-light400_light500 ml-2 font-inter">{subTitle}</h5>
       </div>
 
-      <div className="cursor-pointer flex flex-col gap-3 space-y-6">
-        {visibleSeekers.map((user) => (
-          <Link href={`/profile/user/${user.id}`}>
+      <div className="flex cursor-pointer flex-col gap-3 space-y-6">
+        {visibleSeekers.map((user, index) => (
+          <Link href={`/profile/user/${user.id}`} key={index}>
             <div
               key={user.id}
-              className="relative flex flex-col gap-4 rounded-lg border dark:border-none p-4 shadow-light-300 transition-shadow hover:shadow-lg dark:shadow-black"
+              className="relative flex flex-col gap-4 rounded-lg border p-4 shadow-light-300 transition-shadow hover:shadow-lg dark:border-none dark:shadow-black"
             >
               <Button
                 onClick={() => handleClose(user.id)}
